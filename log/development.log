@@ -760,3 +760,22 @@ Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 10:45:55) [GET]
 Rendering template within layouts/pessoas
 Rendering pessoas/index
 Completed in 41ms (View: 37, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-14 14:58:14) [GET]
+  [4;36;1mPessoa Load (0.5ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 92ms (View: 88, DB: 1) | 200 OK [http://127.0.0.1/]
+
+
+Processing PessoasController#abrir_nova_pessoa (for 127.0.0.1 at 2010-08-14 14:58:18) [POST]
+  Parameters: {"authenticity_token"=>"c8U1rTpbptlyy6HH01OPqW1ENAzBp5gguHjwXQna7vM="}
+Rendered pessoas/_adicionar_pessoa (3.6ms)
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://127.0.0.1/pessoas/abrir_nova_pessoa]
+
+
+Processing PessoasController#abrir_nova_pessoa (for 127.0.0.1 at 2010-08-14 14:58:19) [POST]
+  Parameters: {"authenticity_token"=>"c8U1rTpbptlyy6HH01OPqW1ENAzBp5gguHjwXQna7vM="}
+Rendered pessoas/_adicionar_pessoa (3.4ms)
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://127.0.0.1/pessoas/abrir_nova_pessoa]

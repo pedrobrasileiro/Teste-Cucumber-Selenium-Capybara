@@ -49,10 +49,10 @@ class Capybara::Driver::Selenium
 end
 
 Capybara.default_driver = :selenium
-Capybara::Driver::Selenium.browser = :chrome
-Selenium::WebDriver.for :chrome
+Capybara::Driver::Selenium.browser = :firefox
+Selenium::WebDriver.for :firefox
 
-Capybara.default_wait_time = 5
+Capybara.default_wait_time = 10
 
 # If you set this to false, any error raised from within your app will bubble 
 # up to your step definition and out to cucumber unless you catch it somewhere

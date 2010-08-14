@@ -294,3 +294,35 @@ Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/pessoas/3]
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
 [0m
   [4;36;1mSQL (2.1ms)[0m   [0;1mDELETE FROM "pessoas";[0m
+
+
+Processing PessoasController#index (for ::1 at 2010-08-14 15:01:08) [GET]
+  [4;36;1mPessoa Load (0.6ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 42ms (View: 35, DB: 1) | 200 OK [http://localhost/pessoas]
+
+
+Processing PessoasController#abrir_nova_pessoa (for ::1 at 2010-08-14 15:01:09) [POST]
+Rendered pessoas/_adicionar_pessoa (6.3ms)
+Completed in 9ms (View: 8, DB: 0) | 200 OK [http://localhost/pessoas/abrir_nova_pessoa]
+
+
+Processing PessoasController#create (for ::1 at 2010-08-14 15:01:10) [POST]
+  Parameters: {"commit"=>"Salvar", "pessoa"=>{"telefone"=>"8888-8888", "nome"=>"Pedro Brasileiro"}}
+  [4;35;1mPessoa Create (0.5ms)[0m   [0mINSERT INTO "pessoas" ("telefone", "created_at", "nome", "updated_at") VALUES('8888-8888', '2010-08-14 18:01:10', 'Pedro Brasileiro', '2010-08-14 18:01:10')[0m
+Redirected to http://localhost:9887/pessoas/4
+Completed in 9ms (DB: 1) | 302 Found [http://localhost/pessoas]
+
+
+Processing PessoasController#show (for ::1 at 2010-08-14 15:01:10) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mPessoa Load (0.3ms)[0m   [0;1mSELECT * FROM "pessoas" WHERE ("pessoas"."id" = 4) [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/show
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/pessoas/4]
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (882.8ms)[0m   [0;1mDELETE FROM "pessoas";[0m
