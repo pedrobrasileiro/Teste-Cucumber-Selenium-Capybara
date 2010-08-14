@@ -1,0 +1,762 @@
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (17.7ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (5.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePessoas (20100812020431)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "pessoas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar(255), "telefone" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100812020431')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("pessoas")[0m
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-11 23:16:47) [GET]
+  [4;36;1mPessoa Load (0.4ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 73ms (View: 68, DB: 0) | 200 OK [http://127.0.0.1/pessoas]
+
+
+Processing PessoasController#new (for 127.0.0.1 at 2010-08-11 23:16:49) [GET]
+Rendering template within layouts/pessoas
+Rendering pessoas/new
+Completed in 14ms (View: 9, DB: 0) | 200 OK [http://127.0.0.1/pessoas/new]
+
+
+Processing PessoasController#create (for 127.0.0.1 at 2010-08-11 23:16:56) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"MXaaHn04iKbqhjKUA17/Lu2gz+HrIlzJbF1WRwIu1GQ=", "pessoa"=>{"telefone"=>"88888888", "nome"=>"Pedro"}}
+  [4;35;1mPessoa Create (17.6ms)[0m   [0mINSERT INTO "pessoas" ("telefone", "created_at", "nome", "updated_at") VALUES('88888888', '2010-08-12 02:16:56', 'Pedro', '2010-08-12 02:16:56')[0m
+Redirected to http://127.0.0.1:3000/pessoas/1
+Completed in 50ms (DB: 18) | 302 Found [http://127.0.0.1/pessoas]
+
+
+Processing PessoasController#show (for 127.0.0.1 at 2010-08-11 23:16:56) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPessoa Load (0.1ms)[0m   [0;1mSELECT * FROM "pessoas" WHERE ("pessoas"."id" = 1) [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/show
+Completed in 39ms (View: 34, DB: 0) | 200 OK [http://127.0.0.1/pessoas/1]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-11 23:16:58) [GET]
+  [4;35;1mPessoa Load (0.4ms)[0m   [0mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://127.0.0.1/pessoas]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-11 23:41:38) [GET]
+  [4;36;1mPessoa Load (0.6ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 50ms (View: 46, DB: 1) | 200 OK [http://127.0.0.1/pessoas]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-11 23:42:21) [GET]
+  [4;35;1mPessoa Load (0.4ms)[0m   [0mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+
+ActionView::TemplateError (can't convert Symbol into String) on line #3 of app/views/pessoas/index.html.erb:
+1: <h1>Listing pessoas</h1>
+2: 
+3: <% link_to_remote 'abrir_pessoa', 'Nova Pessoa' %>
+4: 
+5: <div id="div_list_pessoa">
+6: 	<table>
+
+    app/views/pessoas/index.html.erb:3
+    app/controllers/pessoas_controller.rb:7:in `index'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (58.0ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-11 23:42:43) [GET]
+  [4;36;1mPessoa Load (0.4ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 15ms (View: 11, DB: 0) | 200 OK [http://127.0.0.1/pessoas]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-11 23:42:51) [GET]
+  [4;35;1mPessoa Load (0.4ms)[0m   [0mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://127.0.0.1/pessoas]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-11 23:46:44) [GET]
+  [4;36;1mPessoa Load (0.4ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 17ms (View: 12, DB: 0) | 200 OK [http://127.0.0.1/pessoas]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-11 23:50:52) [GET]
+  [4;35;1mPessoa Load (0.4ms)[0m   [0mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://127.0.0.1/pessoas]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-11 23:51:31) [GET]
+  [4;36;1mPessoa Load (0.5ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 32ms (View: 27, DB: 1) | 200 OK [http://127.0.0.1/pessoas]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-11 23:51:39) [GET]
+  [4;35;1mPessoa Load (0.4ms)[0m   [0mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://127.0.0.1/pessoas]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-11 23:52:07) [GET]
+  [4;36;1mPessoa Load (0.4ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 15ms (View: 10, DB: 0) | 200 OK [http://127.0.0.1/pessoas]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-11 23:52:50) [GET]
+  [4;35;1mPessoa Load (0.4ms)[0m   [0mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 15ms (View: 10, DB: 0) | 200 OK [http://127.0.0.1/pessoas]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-11 23:55:36) [GET]
+  [4;36;1mPessoa Load (0.5ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 32ms (View: 27, DB: 1) | 200 OK [http://127.0.0.1/pessoas]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-11 23:56:34) [GET]
+  [4;35;1mPessoa Load (0.4ms)[0m   [0mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://127.0.0.1/pessoas]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 00:01:21) [GET]
+  [4;36;1mPessoa Load (0.5ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 32ms (View: 27, DB: 1) | 200 OK [http://127.0.0.1/]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 00:03:44) [GET]
+  [4;36;1mPessoa Load (0.6ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 33ms (View: 28, DB: 1) | 200 OK [http://127.0.0.1/]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 00:03:45) [GET]
+  [4;35;1mPessoa Load (0.4ms)[0m   [0mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 00:04:44) [GET]
+  [4;36;1mPessoa Load (0.4ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 15ms (View: 11, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 00:04:45) [GET]
+  [4;35;1mPessoa Load (0.4ms)[0m   [0mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing PessoasController#show (for 127.0.0.1 at 2010-08-12 00:05:11) [GET]
+  Parameters: {"id"=>"abrir_nova_pessoa"}
+  [4;36;1mPessoa Load (0.1ms)[0m   [0;1mSELECT * FROM "pessoas" WHERE ("pessoas"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Pessoa with ID=abrir_nova_pessoa):
+  app/controllers/pessoas_controller.rb:16:in `show'
+  /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (43.1ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 00:05:50) [GET]
+  [4;35;1mPessoa Load (0.4ms)[0m   [0mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+ERROR: compiling _run_erb_app47views47pessoas47index46html46erb RAISED compile error
+/Users/pedrobrasileiro/Desktop/teste_ajax_cucumber/app/views/pessoas/index.html.erb:4: syntax error, unexpected tASSOC, expecting ')'
+									:url=>{:action=>'abrir_nova_pessoa',...
+									      ^
+Function body:           def _run_erb_app47views47pessoas47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Listing pessoas</h1>\n\n"
+
+; @output_buffer.concat(( link_to_remote 'Nova Pessoa', :update=>'div_nova_pessoa'
+									:url=>{:action=>'abrir_nova_pessoa', :id=>'1'} ).to_s); @output_buffer.concat "<br><br>\n\n<div id=\"div_list_pessoa\">\n\t<table>\n  \t\t<tr>\n    \t\t<th>Nome</th>\n    \t\t<th>Telefone</th>\n  \t\t</tr>\n\n\t\t"
+
+
+
+
+
+
+
+
+;  @pessoas.each do |pessoa| ; @output_buffer.concat "\n  \t\t\t<tr>\n    \t\t\t<td>"
+
+; @output_buffer.concat((h pessoa.nome ).to_s); @output_buffer.concat "</td>\n    \t\t\t<td>"
+; @output_buffer.concat((h pessoa.telefone ).to_s); @output_buffer.concat "</td>\n    \t\t\t<td>"
+; @output_buffer.concat(( link_to 'Mostrar', pessoa ).to_s); @output_buffer.concat "</td>\n    \t\t\t<td>"
+; @output_buffer.concat(( link_to 'Editar', edit_pessoa_path(pessoa) ).to_s); @output_buffer.concat "</td>\n    \t\t\t<td>"
+; @output_buffer.concat(( link_to 'Apagar', pessoa, :confirm => 'Are you sure?', :method => :delete ).to_s); @output_buffer.concat "</td>\n  \t\t\t</tr>\n\t\t"
+
+;  end ; @output_buffer.concat "\n  \t\t<span id=\"div_nova_pessoa\">\n  \t\t</span>\n\t</table>\n</div>\n\n<br />"
+
+
+
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/pedrobrasileiro/Desktop/teste_ajax_cucumber/app/views/pessoas/index.html.erb:30:in `compile!'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_controller/base.rb:951:in `render_without_benchmark'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:135:in `send'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:135:in `custom'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:179:in `call'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:179:in `respond'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:173:in `each'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:173:in `respond'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/pedrobrasileiro/Desktop/teste_ajax_cucumber/app/controllers/pessoas_controller.rb:7:in `index'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `send'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+/Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+/Users/pedrobrasileiro/.rvm/gems/ree-1.8.7-2010.02@teste_ajax/gems/rails-2.3.5/lib/commands/server.rb:111
+/Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/pedrobrasileiro/Desktop/teste_ajax_cucumber/app/views/pessoas/index.html.erb:4: syntax error, unexpected tASSOC, expecting ')'
+									:url=>{:action=>'abrir_nova_pessoa',...
+									      ^) on line #4 of app/views/pessoas/index.html.erb:
+1: <h1>Listing pessoas</h1>
+2: 
+3: <%= link_to_remote 'Nova Pessoa', :update=>'div_nova_pessoa'
+4: 									:url=>{:action=>'abrir_nova_pessoa', :id=>'1'} %><br><br>
+5: 
+6: <div id="div_list_pessoa">
+7: 	<table>
+
+    app/views/pessoas/index.html.erb:30:in `compile!'
+    app/controllers/pessoas_controller.rb:7:in `index'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (144.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 00:06:01) [GET]
+  [4;36;1mPessoa Load (0.4ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 15ms (View: 10, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 00:08:29) [GET]
+  [4;35;1mPessoa Load (0.4ms)[0m   [0mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 14ms (View: 10, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 00:08:30) [GET]
+  [4;36;1mPessoa Load (0.4ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 00:10:21) [GET]
+  [4;35;1mPessoa Load (0.4ms)[0m   [0mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 17ms (View: 12, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing PessoasController#abrir_nova_pessoa (for 127.0.0.1 at 2010-08-12 00:10:22) [POST]
+  Parameters: {"authenticity_token"=>"MXaaHn04iKbqhjKUA17/Lu2gz+HrIlzJbF1WRwIu1GQ=", "_"=>""}
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #1 of app/views/pessoas/_adicionar_pessoa.erb:
+1: <% form_for(@pessoa) do |f| %>
+2:   <p>
+3:     <%= f.text_field :nome %>&nbsp;
+4: 	<%= f.text_field :telefone %>&nbsp;
+
+    app/views/pessoas/_adicionar_pessoa.erb:1
+    app/controllers/pessoas_controller.rb:88:in `abrir_nova_pessoa'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (59.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 00:10:51) [GET]
+  [4;36;1mPessoa Load (0.4ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 111ms (View: 106, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing PessoasController#abrir_nova_pessoa (for 127.0.0.1 at 2010-08-12 00:10:52) [POST]
+  Parameters: {"authenticity_token"=>"MXaaHn04iKbqhjKUA17/Lu2gz+HrIlzJbF1WRwIu1GQ=", "id"=>"1", "_"=>""}
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #1 of app/views/pessoas/_adicionar_pessoa.erb:
+1: <% form_for(@pessoa) do |f| %>
+2:   <p>
+3:     <%= f.text_field :nome %>&nbsp;
+4: 	<%= f.text_field :telefone %>&nbsp;
+
+    app/views/pessoas/_adicionar_pessoa.erb:1
+    app/controllers/pessoas_controller.rb:88:in `abrir_nova_pessoa'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (58.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 00:11:52) [GET]
+  [4;35;1mPessoa Load (0.4ms)[0m   [0mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 18ms (View: 14, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing PessoasController#abrir_nova_pessoa (for 127.0.0.1 at 2010-08-12 00:11:53) [POST]
+  Parameters: {"authenticity_token"=>"MXaaHn04iKbqhjKUA17/Lu2gz+HrIlzJbF1WRwIu1GQ=", "_"=>""}
+Rendered pessoas/_adicionar_pessoa (3.2ms)
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://127.0.0.1/pessoas/abrir_nova_pessoa]
+
+
+Processing PessoasController#create (for 127.0.0.1 at 2010-08-12 00:14:20) [POST]
+  Parameters: {"commit"=>"Salvar", "authenticity_token"=>"MXaaHn04iKbqhjKUA17/Lu2gz+HrIlzJbF1WRwIu1GQ=", "pessoa"=>{"telefone"=>"88888888", "nome"=>"Pedro"}}
+  [4;36;1mPessoa Create (0.5ms)[0m   [0;1mINSERT INTO "pessoas" ("telefone", "created_at", "nome", "updated_at") VALUES('88888888', '2010-08-12 03:14:20', 'Pedro', '2010-08-12 03:14:20')[0m
+Redirected to http://127.0.0.1:3000/pessoas/2
+Completed in 61ms (DB: 0) | 302 Found [http://127.0.0.1/pessoas]
+
+
+Processing PessoasController#show (for 127.0.0.1 at 2010-08-12 00:14:20) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPessoa Load (0.2ms)[0m   [0mSELECT * FROM "pessoas" WHERE ("pessoas"."id" = 2) [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/show
+Completed in 14ms (View: 8, DB: 0) | 200 OK [http://127.0.0.1/pessoas/2]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 00:17:39) [GET]
+  [4;36;1mPessoa Load (0.6ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 37ms (View: 32, DB: 1) | 200 OK [http://127.0.0.1/pessoas]
+
+
+Processing PessoasController#destroy (for 127.0.0.1 at 2010-08-12 00:17:42) [DELETE]
+  Parameters: {"authenticity_token"=>"MXaaHn04iKbqhjKUA17/Lu2gz+HrIlzJbF1WRwIu1GQ=", "id"=>"2"}
+  [4;35;1mPessoa Load (0.2ms)[0m   [0mSELECT * FROM "pessoas" WHERE ("pessoas"."id" = 2) [0m
+  [4;36;1mPessoa Destroy (0.3ms)[0m   [0;1mDELETE FROM "pessoas" WHERE "id" = 2[0m
+Redirected to http://127.0.0.1:3000/pessoas
+Completed in 9ms (DB: 0) | 302 Found [http://127.0.0.1/pessoas/2]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 00:17:42) [GET]
+  [4;35;1mPessoa Load (0.4ms)[0m   [0mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 14ms (View: 9, DB: 0) | 200 OK [http://127.0.0.1/pessoas]
+
+
+Processing PessoasController#destroy (for 127.0.0.1 at 2010-08-12 00:17:44) [DELETE]
+  Parameters: {"authenticity_token"=>"MXaaHn04iKbqhjKUA17/Lu2gz+HrIlzJbF1WRwIu1GQ=", "id"=>"1"}
+  [4;36;1mPessoa Load (0.2ms)[0m   [0;1mSELECT * FROM "pessoas" WHERE ("pessoas"."id" = 1) [0m
+  [4;35;1mPessoa Destroy (0.3ms)[0m   [0mDELETE FROM "pessoas" WHERE "id" = 1[0m
+Redirected to http://127.0.0.1:3000/pessoas
+Completed in 10ms (DB: 0) | 302 Found [http://127.0.0.1/pessoas/1]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 00:17:44) [GET]
+  [4;36;1mPessoa Load (0.4ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://127.0.0.1/pessoas]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 00:47:55) [GET]
+  [4;36;1mPessoa Load (0.8ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 53ms (View: 48, DB: 1) | 200 OK [http://127.0.0.1/pessoas]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 09:07:49) [GET]
+  [4;36;1mPessoa Load (0.7ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 67ms (View: 61, DB: 1) | 200 OK [http://127.0.0.1/pessoas]
+
+
+Processing PessoasController#create (for 127.0.0.1 at 2010-08-12 09:10:05) [POST]
+  Parameters: {"authenticity_token"=>"MXaaHn04iKbqhjKUA17/Lu2gz+HrIlzJbF1WRwIu1GQ=", "_"=>""}
+  [4;35;1mPessoa Create (10.5ms)[0m   [0mINSERT INTO "pessoas" ("telefone", "created_at", "nome", "updated_at") VALUES(NULL, '2010-08-12 12:10:05', NULL, '2010-08-12 12:10:05')[0m
+Redirected to http://127.0.0.1:3000/pessoas/3
+Completed in 22ms (DB: 11) | 302 Found [http://127.0.0.1/pessoas]
+
+
+Processing PessoasController#show (for 127.0.0.1 at 2010-08-12 09:10:05) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mPessoa Load (0.2ms)[0m   [0;1mSELECT * FROM "pessoas" WHERE ("pessoas"."id" = 3) [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/show
+Completed in 33ms (View: 28, DB: 0) | 200 OK [http://127.0.0.1/pessoas/3]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 09:10:07) [GET]
+  [4;35;1mPessoa Load (0.4ms)[0m   [0mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 18ms (View: 13, DB: 0) | 200 OK [http://127.0.0.1/pessoas]
+
+
+Processing PessoasController#abrir_nova_pessoa (for 127.0.0.1 at 2010-08-12 09:10:10) [POST]
+  Parameters: {"authenticity_token"=>"MXaaHn04iKbqhjKUA17/Lu2gz+HrIlzJbF1WRwIu1GQ=", "_"=>""}
+Rendered pessoas/_adicionar_pessoa (32.6ms)
+Completed in 41ms (View: 37, DB: 0) | 200 OK [http://127.0.0.1/pessoas/abrir_nova_pessoa]
+
+
+Processing PessoasController#abrir_nova_pessoa (for 127.0.0.1 at 2010-08-12 09:10:11) [POST]
+  Parameters: {"authenticity_token"=>"MXaaHn04iKbqhjKUA17/Lu2gz+HrIlzJbF1WRwIu1GQ=", "_"=>""}
+Rendered pessoas/_adicionar_pessoa (3.0ms)
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://127.0.0.1/pessoas/abrir_nova_pessoa]
+
+
+Processing PessoasController#abrir_nova_pessoa (for 127.0.0.1 at 2010-08-12 09:10:19) [POST]
+  Parameters: {"authenticity_token"=>"MXaaHn04iKbqhjKUA17/Lu2gz+HrIlzJbF1WRwIu1GQ=", "_"=>""}
+Rendered pessoas/_adicionar_pessoa (3.3ms)
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://127.0.0.1/pessoas/abrir_nova_pessoa]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 09:12:13) [GET]
+  [4;36;1mPessoa Load (0.4ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 19ms (View: 14, DB: 0) | 200 OK [http://127.0.0.1/pessoas]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 09:12:14) [GET]
+  [4;35;1mPessoa Load (0.4ms)[0m   [0mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 98ms (View: 8, DB: 0) | 200 OK [http://127.0.0.1/pessoas]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 09:12:15) [GET]
+  [4;36;1mPessoa Load (0.6ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 14ms (View: 9, DB: 1) | 200 OK [http://127.0.0.1/pessoas]
+
+
+Processing PessoasController#abrir_nova_pessoa (for 127.0.0.1 at 2010-08-12 09:12:16) [POST]
+  Parameters: {"authenticity_token"=>"MXaaHn04iKbqhjKUA17/Lu2gz+HrIlzJbF1WRwIu1GQ=", "_"=>""}
+Rendered pessoas/_adicionar_pessoa (2.9ms)
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://127.0.0.1/pessoas/abrir_nova_pessoa]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 09:12:23) [GET]
+  [4;35;1mPessoa Load (0.4ms)[0m   [0mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://127.0.0.1/pessoas]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 09:13:20) [GET]
+  [4;36;1mPessoa Load (0.5ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 35ms (View: 30, DB: 1) | 200 OK [http://127.0.0.1/pessoas]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 09:13:21) [GET]
+  [4;35;1mPessoa Load (0.4ms)[0m   [0mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://127.0.0.1/pessoas]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 09:13:37) [GET]
+  [4;36;1mPessoa Load (0.4ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 18ms (View: 13, DB: 0) | 200 OK [http://127.0.0.1/pessoas]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 09:13:41) [GET]
+  [4;35;1mPessoa Load (0.4ms)[0m   [0mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 18ms (View: 13, DB: 0) | 200 OK [http://127.0.0.1/pessoas]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 09:14:00) [GET]
+  [4;36;1mPessoa Load (0.4ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 18ms (View: 14, DB: 0) | 200 OK [http://127.0.0.1/pessoas]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 09:14:08) [GET]
+  [4;35;1mPessoa Load (0.4ms)[0m   [0mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 17ms (View: 12, DB: 0) | 200 OK [http://127.0.0.1/pessoas]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 09:34:27) [GET]
+  [4;36;1mPessoa Load (0.4ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://127.0.0.1/pessoas]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 09:34:35) [GET]
+  [4;35;1mPessoa Load (0.4ms)[0m   [0mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://127.0.0.1/pessoas]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 09:35:05) [GET]
+  [4;36;1mPessoa Load (0.4ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 15ms (View: 11, DB: 0) | 200 OK [http://127.0.0.1/pessoas]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 09:37:08) [GET]
+  [4;36;1mPessoa Load (0.5ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 33ms (View: 28, DB: 1) | 200 OK [http://127.0.0.1/pessoas]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-12 09:37:12) [GET]
+
+ActionController::RoutingError (No route matches "/abrir_nova_pessoa" with {:method=>:get}):
+  /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 09:37:24) [GET]
+  [4;35;1mPessoa Load (0.5ms)[0m   [0mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 16ms (View: 12, DB: 0) | 200 OK [http://127.0.0.1/pessoas]
+
+
+Processing PessoasController#show (for 127.0.0.1 at 2010-08-12 09:37:27) [GET]
+  Parameters: {"id"=>"abrir_nova_pessoa"}
+  [4;36;1mPessoa Load (0.1ms)[0m   [0;1mSELECT * FROM "pessoas" WHERE ("pessoas"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Pessoa with ID=abrir_nova_pessoa):
+  app/controllers/pessoas_controller.rb:16:in `show'
+  /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/pedrobrasileiro/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (44.1ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 09:37:34) [GET]
+  [4;35;1mPessoa Load (0.4ms)[0m   [0mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://127.0.0.1/pessoas]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 10:06:47) [GET]
+  [4;36;1mPessoa Load (0.5ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 34ms (View: 29, DB: 1) | 200 OK [http://127.0.0.1/pessoas]
+
+
+Processing PessoasController#abrir_nova_pessoa (for 127.0.0.1 at 2010-08-12 10:06:49) [POST]
+  Parameters: {"authenticity_token"=>"MXaaHn04iKbqhjKUA17/Lu2gz+HrIlzJbF1WRwIu1GQ=", "_"=>""}
+Rendered pessoas/_adicionar_pessoa (3.9ms)
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://127.0.0.1/pessoas/abrir_nova_pessoa]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 10:45:55) [GET]
+  [4;36;1mPessoa Load (0.6ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 41ms (View: 37, DB: 1) | 200 OK [http://localhost/]

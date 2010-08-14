@@ -1,0 +1,296 @@
+# Logfile created on Wed Aug 11 23:26:26 -0300 2010  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (3.2ms)[0m   [0mDELETE FROM "pessoas";[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mDELETE FROM "pessoas";[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mDELETE FROM "pessoas";[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mDELETE FROM "pessoas";[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (3.3ms)[0m   [0mDELETE FROM "pessoas";[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mDELETE FROM "pessoas";[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mDELETE FROM "pessoas";[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mDELETE FROM "pessoas";[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mDELETE FROM "pessoas";[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mDELETE FROM "pessoas";[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mDELETE FROM "pessoas";[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mDELETE FROM "pessoas";[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mDELETE FROM "pessoas";[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mDELETE FROM "pessoas";[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mDELETE FROM "pessoas";[0m
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 09:48:14) [GET]
+  [4;36;1mPessoa Load (0.5ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 118ms (View: 114, DB: 0) | 200 OK [http://www.example.com/pessoas]
+
+
+Processing PessoasController#show (for 127.0.0.1 at 2010-08-12 09:48:14) [GET]
+  Parameters: {"id"=>"abrir_nova_pessoa"}
+  [4;35;1mPessoa Load (0.2ms)[0m   [0mSELECT * FROM "pessoas" WHERE ("pessoas"."id" = 0) [0m
+
+
+Processing ApplicationController#show (for 127.0.0.1 at 2010-08-12 09:48:14) [GET]
+  Parameters: {"id"=>"abrir_nova_pessoa"}
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mDELETE FROM "pessoas";[0m
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 09:49:24) [GET]
+  [4;36;1mPessoa Load (0.4ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 23ms (View: 20, DB: 0) | 200 OK [http://www.example.com/pessoas]
+
+
+Processing PessoasController#abrir_nova_pessoa (for 127.0.0.1 at 2010-08-12 09:49:24) [POST]
+Rendered pessoas/_adicionar_pessoa (4.2ms)
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://www.example.com/pessoas/abrir_nova_pessoa]
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mDELETE FROM "pessoas";[0m
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 09:56:38) [GET]
+  [4;36;1mPessoa Load (0.6ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 24ms (View: 20, DB: 1) | 200 OK [http://www.example.com/pessoas]
+
+
+Processing PessoasController#abrir_nova_pessoa (for 127.0.0.1 at 2010-08-12 09:56:38) [POST]
+Rendered pessoas/_adicionar_pessoa (4.2ms)
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://www.example.com/pessoas/abrir_nova_pessoa]
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mDELETE FROM "pessoas";[0m
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 10:06:27) [GET]
+  [4;36;1mPessoa Load (0.5ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 24ms (View: 20, DB: 0) | 200 OK [http://www.example.com/pessoas]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 10:07:12) [GET]
+  [4;36;1mPessoa Load (0.4ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 22ms (View: 19, DB: 0) | 200 OK [http://www.example.com/pessoas]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 10:12:44) [GET]
+  [4;36;1mPessoa Load (0.3ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 24ms (View: 20, DB: 0) | 200 OK [http://www.example.com/pessoas]
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 10:14:45) [GET]
+  [4;36;1mPessoa Load (0.5ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 23ms (View: 19, DB: 0) | 200 OK [http://www.example.com/pessoas]
+
+
+Processing PessoasController#abrir_nova_pessoa (for 127.0.0.1 at 2010-08-12 10:14:46) [POST]
+Rendered pessoas/_adicionar_pessoa (4.2ms)
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://www.example.com/pessoas/abrir_nova_pessoa]
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mDELETE FROM "pessoas";[0m
+  [4;36;1mSQL (16.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (4.2ms)[0m   [0mDELETE FROM "pessoas";[0m
+  [4;36;1mSQL (16.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (3.2ms)[0m   [0mDELETE FROM "pessoas";[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (18.6ms)[0m   [0mDELETE FROM "pessoas";[0m
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 10:58:28) [GET]
+  [4;36;1mPessoa Load (12.5ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 57ms (View: 39, DB: 12) | 200 OK [http://localhost/pessoas]
+
+
+Processing PessoasController#abrir_nova_pessoa (for 127.0.0.1 at 2010-08-12 10:58:30) [POST]
+Rendered pessoas/_adicionar_pessoa (4.5ms)
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://localhost/pessoas/abrir_nova_pessoa]
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (39.7ms)[0m   [0;1mDELETE FROM "pessoas";[0m
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 10:59:06) [GET]
+  [4;36;1mPessoa Load (45.3ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 110ms (View: 59, DB: 45) | 200 OK [http://localhost/pessoas]
+
+
+Processing PessoasController#abrir_nova_pessoa (for 127.0.0.1 at 2010-08-12 10:59:08) [POST]
+Rendered pessoas/_adicionar_pessoa (4.2ms)
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/pessoas/abrir_nova_pessoa]
+
+
+Processing PessoasController#create (for 127.0.0.1 at 2010-08-12 10:59:10) [POST]
+  Parameters: {"commit"=>"Salvar", "pessoa"=>{"telefone"=>"8888-8888", "nome"=>"Pedro Brasileiro"}}
+  [4;35;1mPessoa Create (27.0ms)[0m   [0mINSERT INTO "pessoas" ("telefone", "created_at", "nome", "updated_at") VALUES('8888-8888', '2010-08-12 13:59:10', 'Pedro Brasileiro', '2010-08-12 13:59:10')[0m
+Redirected to http://localhost:9887/pessoas/1
+Completed in 79ms (DB: 27) | 302 Found [http://localhost/pessoas]
+
+
+Processing PessoasController#show (for 127.0.0.1 at 2010-08-12 10:59:10) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPessoa Load (0.3ms)[0m   [0;1mSELECT * FROM "pessoas" WHERE ("pessoas"."id" = 1) [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/show
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/pessoas/1]
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mDELETE FROM "pessoas";[0m
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 11:08:10) [GET]
+  [4;36;1mPessoa Load (29.8ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 104ms (View: 35, DB: 30) | 200 OK [http://localhost/pessoas]
+
+
+Processing PessoasController#abrir_nova_pessoa (for 127.0.0.1 at 2010-08-12 11:08:13) [POST]
+Rendered pessoas/_adicionar_pessoa (9.6ms)
+Completed in 13ms (View: 11, DB: 0) | 200 OK [http://localhost/pessoas/abrir_nova_pessoa]
+
+
+Processing PessoasController#create (for 127.0.0.1 at 2010-08-12 11:08:16) [POST]
+  Parameters: {"commit"=>"Salvar", "pessoa"=>{"telefone"=>"8888-8888", "nome"=>"Pedro Brasileiro"}}
+  [4;35;1mPessoa Create (0.5ms)[0m   [0mINSERT INTO "pessoas" ("telefone", "created_at", "nome", "updated_at") VALUES('8888-8888', '2010-08-12 14:08:16', 'Pedro Brasileiro', '2010-08-12 14:08:16')[0m
+Redirected to http://localhost:9887/pessoas/2
+Completed in 46ms (DB: 0) | 302 Found [http://localhost/pessoas]
+
+
+Processing PessoasController#show (for 127.0.0.1 at 2010-08-12 11:08:16) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPessoa Load (0.3ms)[0m   [0;1mSELECT * FROM "pessoas" WHERE ("pessoas"."id" = 2) [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/show
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/pessoas/2]
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.8ms)[0m   [0;1mDELETE FROM "pessoas";[0m
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-08-12 15:14:29) [GET]
+  [4;36;1mPessoa Load (0.6ms)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 73ms (View: 68, DB: 1) | 200 OK [http://localhost/pessoas]
+
+
+Processing PessoasController#abrir_nova_pessoa (for 127.0.0.1 at 2010-08-12 15:14:30) [POST]
+Rendered pessoas/_adicionar_pessoa (7.6ms)
+Completed in 10ms (View: 9, DB: 0) | 200 OK [http://localhost/pessoas/abrir_nova_pessoa]
+
+
+Processing PessoasController#create (for 127.0.0.1 at 2010-08-12 15:14:32) [POST]
+  Parameters: {"commit"=>"Salvar", "pessoa"=>{"telefone"=>"8888-8888", "nome"=>"Pedro Brasileiro"}}
+  [4;35;1mPessoa Create (0.6ms)[0m   [0mINSERT INTO "pessoas" ("telefone", "created_at", "nome", "updated_at") VALUES('8888-8888', '2010-08-12 18:14:32', 'Pedro Brasileiro', '2010-08-12 18:14:32')[0m
+Redirected to http://localhost:9887/pessoas/3
+Completed in 12ms (DB: 1) | 302 Found [http://localhost/pessoas]
+
+
+Processing PessoasController#show (for 127.0.0.1 at 2010-08-12 15:14:32) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mPessoa Load (0.3ms)[0m   [0;1mSELECT * FROM "pessoas" WHERE ("pessoas"."id" = 3) [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/show
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/pessoas/3]
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mDELETE FROM "pessoas";[0m

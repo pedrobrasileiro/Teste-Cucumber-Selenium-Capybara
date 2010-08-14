@@ -1,0 +1,27 @@
+<h1>Cadastro de Pessoas</h1>
+
+<%= link_to_remote 'Nova Pessoa', :update=>'div_nova_pessoa',
+									:url=>{:action=>'abrir_nova_pessoa'} %><br><br>
+
+
+	<table>
+  		<tr>
+    		<th>Nome</th>
+    		<th>Telefone</th>
+  		</tr>
+		<div id="div_list_pessoa">
+		<% @pessoas.each do |pessoa| %>
+  			<tr>
+    			<td><%=h pessoa.nome %></td>
+    			<td><%=h pessoa.telefone %></td>
+    			<td><%= link_to 'Mostrar', pessoa %></td>
+    			<td><%= link_to 'Editar', edit_pessoa_path(pessoa) %></td>
+    			<td><%= link_to 'Apagar', pessoa, :confirm => 'Are you sure?', :method => :delete %></td>
+  			</tr>
+		<% end %>
+		</div>
+  		<span id="div_nova_pessoa">
+  		</span>
+	</table>
+
+<br />

@@ -1,0 +1,7 @@
+<% form_for(@pessoa) do |f| %>
+  <p>
+    <%= f.text_field :nome %>&nbsp;
+	<%= f.text_field :telefone %>&nbsp;
+    <%= f.submit 'Salvar' %>
+  </p>
+<% end %>
